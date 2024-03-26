@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="card-header bg-primary text-white">
+                  Weather Forecast
+              </div>
+              <div class="card-body">
+                  <div class="mb-3">
+                      <label for="cityInput" class="form-label">Enter City</label>
+                      <input type="text" class="form-control" id="cityInput" [(ngModel)]="city">
+                  </div>
+                  <button type="button" class="btn btn-primary" id="searchBtn" (click)="search()">Search</button>
+              </div>
+              <div class="card-footer">
+                <div *ngIf="weatherData">
+                  <h5>{{ weatherData.name }}, {{ weatherData.sys.country }}</h5>
+                  <p>Temperature: {{ weatherData.main.temp }}°C</p>
+                  <p>Weather: {{ weatherData.weather[0].description }}</p>
+                </div>
+                <div *ngIf="error">
+                  <h4>Error: {{ error }}</h4>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
