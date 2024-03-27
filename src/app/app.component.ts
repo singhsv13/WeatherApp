@@ -25,9 +25,9 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   search(){
-    if(this.city.trim() === ''){
-      this.error = 'Please enter valid city name!!!';
-    }
+    // if(this.city.trim() === ''){
+    //   this.error = 'Please enter valid city name!!!';
+    // }
     const weatherInfo = this.weatherService.getWeatherReport(this.city.trim());
     this.mySubscription = weatherInfo.subscribe((data)=>{
       this.weatherData = data ;
